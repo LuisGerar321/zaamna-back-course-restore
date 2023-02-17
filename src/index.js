@@ -4,10 +4,10 @@ const { sleep } = require("./utils/sleep");
 
 
 (async function main() {
-  let initialPage = 171;
+  let initialPage = 1;
   let perPage = 100;
   try {
-    const data = await axios.get(`http://localhost:3004/api/v1/admin/users/mandatory/plan/users?page=1&per_page=${perPage}`).then(res => res.data?.data);
+    const data = await axios.get(`http://localhost:3004/api/v1/admin/users/mandatory/plan/users?page=1&per_page=${perPage}`).then(res => res.data.data);
     const { totalPages } = data;
     console.log(totalPages);
   
